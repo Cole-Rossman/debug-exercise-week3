@@ -1,4 +1,5 @@
-function addFriend(friends, name) {
+
+export function addFriend(friends, name) {
     const newFriend = {
         name: name || `Friend #${Math.floor(Math.random() * 1000)}`,
         satisfaction: 1
@@ -8,9 +9,12 @@ function addFriend(friends, name) {
 }
 
 export default function findFriendByName(name, friends) {
+    const friend = '';
     for (friend of friends) {
         if (friend.name = name) {
-            return friend;
+            // return friend;
         }
     }
+  
+    return friend;
 }
