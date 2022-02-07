@@ -3,9 +3,10 @@ import { renderMushroom, renderFriend } from './render-utils.js';
 import { addFriend, findFriendByName } from './data-utils.js';
 
 const friendsEl = document.querySelector('.friends');
-const mushroomsEl = document.querySelectorAll('.mushrooms');
-const addMushroomButton = document.getElementById('add-mushroom');
-const addFriendButton = document.getElementById('add-friend');
+const mushroomsEl = document.querySelector('.mushrooms');
+const addMushroomButton = document.getElementById('add-mushroom-button');
+const addFriendButton = document.getElementById('add-friend-button');
+const friendInputEl = document.getElementById('friend-input');
 // initialize state
 
 let mushroomCount = 3;
@@ -31,7 +32,7 @@ const friendData = [
 
 function displayFriends() {
     for (let friend of friendData) {
-        const friendEl = renderFriend(friendData);
+        const friendEl = renderFriend(friend);
 
         friendEl.addEventListener('click', () => {
             const friendInState = findFriendByName(friend.name, friendData);
